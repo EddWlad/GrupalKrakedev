@@ -29,30 +29,45 @@
             <div class="superior">
                 <div class="titulo">CUENTAS</div>
                 <div class="contenedorTexto">
-                    <div class="etiquetaTexto">CAMPO 1</div>
+                    <div class="etiquetaTexto">CUENTA</div>
                     <div class="cajaTexto">
-                        <input type="text" class="caja" />
+                        <input type="text" class="caja" id="txtCampo1" />
                     </div>
                 </div>
                 <div class="contenedorTexto">
-                    <div class="etiquetaTexto">CAMPO 2</div>
+                    <div class="etiquetaTexto">CEDULA</div>
                     <div class="cajaTexto">
-                        <input type="text" class="caja" />
+                        <input type="text" class="caja" id="txtCampo2" />
                     </div>
                 </div>
                 <div class="contenedorTexto">
-                    <div class="etiquetaTexto">CAMPO 3</div>
+                    <div class="etiquetaTexto">NOMBRE</div>
                     <div class="cajaTexto">
-                        <input type="text" class="caja" />
+                        <input type="text" class="caja" id="txtCampo3" />
+                    </div>
+                </div>
+                <div class="contenedorTexto">
+                    <div class="etiquetaTexto">APELLIDO</div>
+                    <div class="cajaTexto">
+                        <input type="text" class="caja" id="txtCampo4" />
+                    </div>
+                </div>
+                <div class="contenedorTexto">
+                    <div class="etiquetaTexto">SALDO</div>
+                    <div class="cajaTexto">
+                        <input type="text" class="caja" id="txtCampo5" />
                     </div>
                 </div>
                 <div class="contenedorAcciones">
-                    <input type="button" value="GUARDAR" />
+                    <input type="button" value="GUARDAR" onclick="agregar();" />
                 </div>
             </div>
 
             <div class="inferior">
                 TABLA
+            </div>
+            <div id="tablaCuentas" class="areaTabla">
+
             </div>
 
         </div>

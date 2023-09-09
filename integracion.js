@@ -196,6 +196,61 @@ ejecutarRetiro = function()
     mostrarTexto("lblSaldo",retiro);
 }
 
+let movimientosCuenta=[];
+
+ejecutarFiltro=function(){
+
+  let valorRe=  recuperarTexto("txtBuscar");
+  filtrarMovimientos(valorRe);
+}
+
+filtrarMovimientos=function(numeroCuenta){
+ 
+    let movimiento;
+    for (let e = 0; e < movimientos.length; e++) {
+
+         movimiento = movimientos[e];
+
+        if (movimiento.numeroCuenta === numeroCuenta) {
+
+            movimientosCuenta.push(movimiento);
+            mostrarMovimientos(movimientosCuenta);
+        }
+    }
+}
+
+mostrarMovimientos=function(misMovimientos){
+  
+    let cmpTablaMovi = document.getElementById("tablaMovimientos");
+    
+    let contenidoTablaMov = "<table> <tr> " +
+        "<th>NUMERO DE CUENTA </th>" +
+        "<th>MONTO </th>" +
+        "<th>TIPO </th>" +
+        "</tr>"
+
+    for (let e = 0; e < movimientosCuenta.length; e++) {
+
+        misMovimientos = movimientosCuenta[e];
+        contenidoTablaMov +=
+            "<tr> <td> " + misMovimientos.numeroCuenta + " </td>" +
+            "<td> " + misMovimientos.monto + " </td>" +
+            "<td> " + misMovimientos.tipo + " </td>" +      
+            "  </tr>"
+            
+    }
+    if(misMovimientos.tipo === "D"){
+        
+        misMovimientos.monto= misMovimientos.monto *-1;
+     
+     }
+    
+    contenidoTablaMov += "</table>"
+    cmpTablaMovi.innerHTML = contenidoTablaMov;
+}
+
+
+
 //OCULTAR Y MOSTRAR LOS DIVS, para que cada opción muestre solo su parte
 
 

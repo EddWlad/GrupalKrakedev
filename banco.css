@@ -111,3 +111,33 @@ body{
 {
     color: blue;
 }
+
+tbody tr:nth-child(odd) {
+    background-color: #c8e6c9;
+    color: #333;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fff59d;
+    color: #333;
+}
+
+tbody tr {
+    background-image: url(noise.png);
+}
+
+table {
+    background-color: #0b0c0c;
+    width: 100%;
+}
+
+td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc; 
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.areaTabla {
+    margin-top: 20px;
+}

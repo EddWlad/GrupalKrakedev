@@ -30,6 +30,7 @@ mostrarOpcionMovimientos = function()
     mostrarComponente("divMovimientos");
     ocultarComponente("divCuentas");
     ocultarComponente("divTransacciones");
+    mostrarComponente("tablaMovimientos");
 }
 
 //INTEGRANTE 1

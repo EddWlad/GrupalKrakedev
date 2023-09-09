@@ -2,9 +2,9 @@
 <html>
 
 <head>
-    <link href="./banco.css" rel="stylesheet" />
-    <script src="./transacciones.js"></script>
+    <link href="./banco.css" rel="stylesheet"/>
     <script src="./utilitarios.js"></script>
+    <script src="./integracion.js"></script>
     <meta charset="utf-8">
 </head>
 
@@ -15,14 +15,14 @@
                 <img src="./imagenes/logoKrakeDev.png" width="80%" />
             </div>
             <div class="contenedorBotones">
-                <input type="button" value="CUENTAS" class="boton" id="btnCuentas"/>
-                <input type="button" value="TRANSACCIONES" class="boton" id="btnTransacciones"/>
-                <input type="button" value="MOVIMIENTOS" class="boton" id="btnMovimientos"/>
+                <input type="button" value="CUENTAS" class="boton" id="btnCuentas" onclick="mostrarOpcionCuentas();"/>
+                <input type="button" value="TRANSACCIONES" class="boton" id="btnTransacciones" onclick="mostrarOpcionTransacciones();"/>
+                <input type="button" value="MOVIMIENTOS" class="boton" id="btnMovimientos" onclick="mostrarOpcionMovimientos();"/>
             </div>
             <div class="contenedorInfoGrupo">
-                <div>INTEGRANTE 1</div>
-                <div>INTEGRANTE 2</div>
-                <div>INTEGRANTE 3</div>
+                <div>JORDY PACHUCHO</div>
+                <div>KEVIN CHAVEZ</div>
+                <div>EDISON MOROCHO</div>
             </div>
         </div>
         <div class="contenido" id="divCuentas">
@@ -112,7 +112,7 @@
             <div class="inferior">
                 <div class="titulo">MOVIMIENTOS</div>
                 <div class="contenedorTexto">
-                    <div class="etiquetaTexto">CAMPO 1</div>
+                    <div class="etiquetaTexto">NUMERO DE CUENTA</div>
                     <div class="cajaTexto">
                         <input type="text" class="caja" />
                     </div>

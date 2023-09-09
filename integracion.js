@@ -10,6 +10,28 @@ movimientos=[
     {numeroCuenta:"02345211",monto:65.23,tipo:"C"},
     {numeroCuenta:"02345211",monto:12.0,tipo:"D"},
 ]
+
+mostrarOpcionCuentas = function()
+{
+    mostrarComponente("divCuentas");
+    ocultarComponente("divMovimientos");
+    ocultarComponente("divTransacciones"); 
+}
+
+mostrarOpcionTransacciones = function()
+{
+    mostrarComponente("divTransacciones");
+    ocultarComponente("divCuentas");
+    ocultarComponente("divMovimientos");   
+}
+
+mostrarOpcionMovimientos = function()
+{
+    mostrarComponente("divMovimientos");
+    ocultarComponente("divCuentas");
+    ocultarComponente("divTransacciones");
+}
+
 //INTEGRANTE 1
 
 mostrarCuentas=function(){
@@ -85,15 +107,15 @@ agregar= function() {
 */
 
 cargar=function(){
-    mostrarComponente("divTransacciones");
-    ocultarComponente("divCuentas");
+    mostrarComponente("divCuentas");
     ocultarComponente("divMovimientos");
-    deshabilitarComponente("btnCuentas");
-    deshabilitarComponente("btnTransacciones");
-    deshabilitarComponente("btnMovimientos");
+    ocultarComponente("divTransacciones");
     deshabilitarComponente("btnDepositar");
     deshabilitarComponente("btnRetirar");
     deshabilitarComponente("monto");
+    habilitarComponente("btnCuentas");
+    habilitarComponente("btnTransacciones");
+    habilitarComponente("btnMovimientos");
     
 }
 

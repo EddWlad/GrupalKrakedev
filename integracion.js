@@ -10,7 +10,74 @@ movimientos=[
     {numeroCuenta:"02345211",monto:65.23,tipo:"C"},
     {numeroCuenta:"02345211",monto:12.0,tipo:"D"},
 ]
+//INTEGRANTE 1
 
+mostrarCuentas=function(){
+    /*
+        Muestra en pantalla una tabla con la información de todas las cuentas del arreglo.
+        Columnas: NUMERO CUENTA, NOMBRE, SALDO
+        En la columna NOMBRE concatenar el nombre y el apellido
+    */
+
+    let cmpTabla = document.getElementById("tablaCuentas");
+    let contenidoTabla = "<table><tr>" +
+        "<th> CEDULA </th>" +
+        "<th> NOMBRE </th>" +
+        "<th> SALDO </th>" +
+        "</tr>";
+    let elementoCuenta;
+
+    for (let i = 0; i < cuentas.length; i++) {
+        elementoCuenta = cuentas[i];
+        contenidoTabla +=
+            "<tr><td>" + elementoCuenta.cedula + "</td>"
+            + "<td>" + elementoCuenta.nombre + " " + elementoCuenta.apellido + "</td>"
+            + "<td>" + elementoCuenta.saldo + "</td>"
+            + "</tr> ";
+    }
+    contenidoTabla += "</table>";
+    cmpTabla.innerHTML = contenidoTabla;
+}
+
+agregarCuenta=function(cuenta){
+    //Si ya existe mostrar un alert CUENTA EXISTENTE
+    //Si se agrega, mostrar un alert CUENTA AGREGADA
+    let cuentaExistente = buscarCuenta(cuenta.numeroCuenta);
+    if (cuentaExistente === null) {
+        cuentas.push(cuenta);
+        alert("Cuenta agregada correctamente");
+    } else {
+        alert("Ya existe una cuenta con este número de cuenta: " + cuenta.numeroCuenta);
+    }
+}
+
+agregar= function() {
+
+    //Toma los valores de las cajas de texto, sin validaciones
+    //Crea un objeto cuenta y agrega los atributos con los valores de las cajas respectivas
+    //Invoca a agregarCuenta
+    //Invoca a mostrarCuentas
+
+    let numeroCuenta = recuperarTexto("txtCampo1");
+    let cedula = recuperarTexto("txtCampo2");
+    let nombre = recuperarTexto("txtCampo3");
+    let apellido = recuperarTexto("txtCampo4");
+    let saldoTexto = recuperarTexto("txtCampo5");
+
+    let saldo = parseFloat(saldoTexto); // Convertir el saldo a un número
+
+    if (!isNaN(saldo)) {
+        let nuevaCuenta = {
+            numeroCuenta: numeroCuenta,
+            cedula: cedula,
+            nombre: nombre,
+            apellido: apellido,
+            saldo: saldo // Asignar el saldo convertido
+        }
+        agregarCuenta(nuevaCuenta);
+        mostrarCuentas();
+    }
+}
 /*
     En este archivo se deben colocar todas las funciones de cuentas, movimientos y transacciones
     IMPORTANTE: NO DUPLICAR FUNCIONES, si existe una misma función en varios archivos,
